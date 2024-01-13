@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat Jan 13 14:11:08 2024
+# Process ID: 13884
+# Current directory: D:/Study/HDL/ASS/Draft 1/Draft 1.sim/sim_1/behav/xsim
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18944 D:\Study\HDL\ASS\Draft 1\Draft 1.sim\sim_1\behav\xsim\timerRun_tb_behav.wdb
+# Log file: D:/Study/HDL/ASS/Draft 1/Draft 1.sim/sim_1/behav/xsim/vivado.log
+# Journal file: D:/Study/HDL/ASS/Draft 1/Draft 1.sim/sim_1/behav/xsim\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_wave_database {D:\Study\HDL\ASS\Draft 1\Draft 1.sim\sim_1\behav\xsim\timerRun_tb_behav.wdb}
+ERROR: [Simtcl 6-118] Unable to locate wdb file 'D:\Study\HDL\ASS\Draft 1\Draft 1.sim\sim_1\behav\xsim\timerRun_tb_behav.wdb'

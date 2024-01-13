@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1704970160">
+  <File Type="BITSTR-BMM" Name="tb_num7seg_bd.bmm"/>
+  <File Type="PA-TCL" Name="tb_num7seg.tcl"/>
+  <File Type="OPT-DCP" Name="tb_num7seg_opt.dcp"/>
+  <File Type="REPORTS-TCL" Name="tb_num7seg_reports.tcl"/>
+  <File Type="OPT-HWDEF" Name="tb_num7seg.hwdef"/>
+  <File Type="BG-BGN" Name="tb_num7seg.bgn"/>
+  <File Type="PWROPT-DCP" Name="tb_num7seg_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="tb_num7seg_placed.dcp"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="tb_num7seg_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="tb_num7seg_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="tb_num7seg.bin"/>
+  <File Type="PHYSOPT-DCP" Name="tb_num7seg_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="tb_num7seg.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="tb_num7seg_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="tb_num7seg_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="tb_num7seg_routed_bb.dcp"/>
+  <File Type="BITSTR-LTX" Name="tb_num7seg.ltx"/>
+  <File Type="BITSTR-MMI" Name="tb_num7seg.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="tb_num7seg.sysdef"/>
+  <File Type="ROUTE-TIMING-PB" Name="tb_num7seg_timing_summary_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="tb_num7seg_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="tb_num7seg_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="tb_num7seg.bit"/>
+  <File Type="BITSTR-RBT" Name="tb_num7seg.rbt"/>
+  <File Type="BITSTR-NKY" Name="tb_num7seg.nky"/>
+  <File Type="BG-DRC" Name="tb_num7seg.drc"/>
+  <File Type="RDI-RDI" Name="tb_num7seg.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-DRC" Name="tb_num7seg_drc_opted.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/num7seg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/num7seg_tb.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/EX 1/dec.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../LAB 1 - GROUP 6 - CC01/LAB 1 HDL/EX 1/dec.v"/>
+        <Attr Name="ImportTime" Val="1650464096"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../LAB 1 - GROUP 6 - CC01/LAB 1 HDL/EX 1/Exercise 1.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="tb_num7seg"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/BROAD/Arty-Z7-20-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../BROAD/Arty-Z7-20-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1704897507"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

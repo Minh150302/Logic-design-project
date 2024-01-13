@@ -1,0 +1,85 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 13884
+License: Customer
+
+Current time: 	Sat Jan 13 14:11:25 ICT 2024
+Time zone: 	Indochina Time (Asia/Bangkok)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1280x720
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 15 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Huy Minh
+User home directory: C:/Users/Huy Minh
+User working directory: D:/Study/HDL/ASS/Draft 1/Draft 1.sim/sim_1/behav/xsim
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.2
+RDI_DATADIR: C:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/Huy Minh/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/Huy Minh/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/Huy Minh/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	D:/Study/HDL/ASS/Draft 1/Draft 1.sim/sim_1/behav/xsim/vivado.log
+Vivado journal file location: 	D:/Study/HDL/ASS/Draft 1/Draft 1.sim/sim_1/behav/xsim/vivado.jou
+Engine tmp dir: 	D:/Study/HDL/ASS/Draft 1/Draft 1.sim/sim_1/behav/xsim/.Xil/Vivado-13884-LAPTOP-MINH
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.2
+XILINX_SDK: C:/Xilinx/SDK/2018.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	161 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 479 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// bx (ck):  Reading simulation file 'D:\Study\HDL\ASS\Draft 1\Draft 1.sim\sim_1\behav\xsim\timerRun_tb_behav.wdb' : addNotify
+// TclEventType: LOAD_FEATURE
+// Tcl Message: open_wave_database {D:\Study\HDL\ASS\Draft 1\Draft 1.sim\sim_1\behav\xsim\timerRun_tb_behav.wdb} 
+// Tcl Message: ERROR: [Simtcl 6-118] Unable to locate wdb file 'D:\Study\HDL\ASS\Draft 1\Draft 1.sim\sim_1\behav\xsim\timerRun_tb_behav.wdb' 
+// TclEventType: STOP_PROGRESS_DIALOG
+// [GUI Memory]: 57 MB (+56905kb) [00:00:07]
+// [Engine Memory]: 478 MB (+350042kb) [00:00:07]
+// HOptionPane Error: 'ERROR: [Simtcl 6-118] Unable to locate wdb file 'D:\Study\HDL\ASS\Draft 1\Draft 1.sim\ sim_1\behav\xsim\timerRun_tb_behav.wdb'  (Reading simulation file 'D:\Study\HDL\ASS\Draft 1\Draft 1.sim\sim_1\behav\xsim\timerRun_tb_behav.wdb')'
+// TclEventType: STOP_PROGRESS_DIALOG
+// df (ck): Error Messages: addNotify
+selectButton(PAResourceOtoP.PlanAhead_CONTINUE, "Continue"); // f (df)
+dismissDialog("Error Messages"); // df (ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 479 MB. GUI used memory: 33 MB. Current time: 1/13/24 2:11:27 PM ICT
+selectButton("PAResourceItoN.MainWindow_THERE_WERE_SOME_ERRORS_WHEN_EXECUTING_TCL_OK", "OK"); // JButton (A, G)

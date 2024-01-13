@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Jan 11 17:47:48 2024
+# Process ID: 6156
+# Current directory: D:/Study/HDL/ASS/Draft 1/Draft 1.runs/synth_1
+# Command line: vivado.exe -log tb_num7seg.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tb_num7seg.tcl
+# Log file: D:/Study/HDL/ASS/Draft 1/Draft 1.runs/synth_1/tb_num7seg.vds
+# Journal file: D:/Study/HDL/ASS/Draft 1/Draft 1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source tb_num7seg.tcl -notrace

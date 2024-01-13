@@ -1,0 +1,207 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Jan 11 17:49:26 2024
+# Process ID: 7292
+# Current directory: D:/Study/HDL/ASS/Draft 1/Draft 1.runs/impl_1
+# Command line: vivado.exe -log tb_num7seg.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source tb_num7seg.tcl -notrace
+# Log file: D:/Study/HDL/ASS/Draft 1/Draft 1.runs/impl_1/tb_num7seg.vdi
+# Journal file: D:/Study/HDL/ASS/Draft 1/Draft 1.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source tb_num7seg.tcl -notrace
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26c/1.2/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:k26c:som240_1_connector:1.2
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26c/1.2/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26c/1.3/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:k26c:som240_1_connector:1.3
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26c/1.3/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26c/1.4/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:k26c:som240_1_connector:1.4
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26c/1.4/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26i/1.2/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:k26i:som240_1_connector:1.2
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26i/1.2/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26i/1.3/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:k26i:som240_1_connector:1.3
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26i/1.3/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26i/1.4/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:k26i:som240_1_connector:1.4
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/k26i/1.4/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kr260_carrier/1.0/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:kr260_carrier:som240_1_connector:1.0
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kr260_carrier/1.0/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kr260_som/1.0/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:kr260_som:som240_1_connector:1.0
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kr260_som/1.0/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kr260_som/1.1/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:kr260_som:som240_1_connector:1.1
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kr260_som/1.1/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kv260_carrier/1.2/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:kv260_carrier:som240_1_connector:1.2
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kv260_carrier/1.2/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kv260_carrier/1.3/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:kv260_carrier:som240_1_connector:1.3
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kv260_carrier/1.3/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kv260_som/1.2/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:kv260_som:som240_1_connector:1.2
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kv260_som/1.2/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kv260_som/1.3/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:kv260_som:som240_1_connector:1.3
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kv260_som/1.3/board.xml
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kv260_som/1.4/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for xilinx.com:kv260_som:som240_1_connector:1.4
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kv260_som/1.4/board.xml
+Command: link_design -top tb_num7seg -part xc7z020clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/Study/HDL/ASS/Draft 1/Draft 1.srcs/constrs_1/imports/BROAD/Arty-Z7-20-Master.xdc]
+Finished Parsing XDC File [D:/Study/HDL/ASS/Draft 1/Draft 1.srcs/constrs_1/imports/BROAD/Arty-Z7-20-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+5 Infos, 14 Warnings, 14 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 689.473 ; gain = 335.414
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 690.594 ; gain = 1.121
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: f36860e2
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1174.723 ; gain = 484.129
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: f36860e2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1174.723 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: f36860e2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1174.723 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: f36860e2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1174.723 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: f36860e2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1174.723 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+Phase 5 Shift Register Optimization | Checksum: f36860e2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 1174.723 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: f36860e2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1174.723 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1174.723 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: f36860e2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1174.723 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: f36860e2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1174.723 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: f36860e2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1174.723 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+21 Infos, 14 Warnings, 14 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1174.723 ; gain = 485.250
+INFO: [Timing 38-480] Writing timing data to binary archive.
+INFO: [Common 17-1381] The checkpoint 'D:/Study/HDL/ASS/Draft 1/Draft 1.runs/impl_1/tb_num7seg_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file tb_num7seg_drc_opted.rpt -pb tb_num7seg_drc_opted.pb -rpx tb_num7seg_drc_opted.rpx
+Command: report_drc -file tb_num7seg_drc_opted.rpt -pb tb_num7seg_drc_opted.pb -rpx tb_num7seg_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file D:/Study/HDL/ASS/Draft 1/Draft 1.runs/impl_1/tb_num7seg_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1217.648 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 00000000
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1217.648 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 00000000
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1217.648 ; gain = 0.000
+ERROR: [Place 30-494] The design is empty
+Resolution: Check if opt_design has removed all the leaf cells of your design.  Check whether you have instantiated and connected all of the top level ports.
+Ending Placer Task | Checksum: 00000000
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1217.648 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+38 Infos, 14 Warnings, 14 Critical Warnings and 2 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 11 17:49:55 2024...

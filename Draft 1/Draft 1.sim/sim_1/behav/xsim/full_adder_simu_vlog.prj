@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Draft 1.srcs/sources_1/imports/EX 3/full_adder.v" \
+"../../../../Draft 1.srcs/sources_1/imports/EX 3/full_adder_simu.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
