@@ -77,9 +77,9 @@ module digital_clock(clk, rst, H_out1, H_out0, M_out1, M_out0, S_out1,S_out0);
         end
         else begin
         counter <= counter + 1;
-        if(counter <= 5000) 
+        if(counter <= 2) 
         clk_1s <= 0;
-        else if (counter >= 10000) begin
+        else if (counter >= 4) begin
         clk_1s <= 1;
         counter <= 1;
         end
@@ -96,25 +96,25 @@ module digital_clock(clk, rst, H_out1, H_out0, M_out1, M_out0, S_out1,S_out0);
     begin
         if(rst)
         begin
-            tmp_hour <= 0;
-            tmp_min  <= 0;
-            tmp_sec  <= 0;
+            tmp_hour <= 3;
+            tmp_min  <= 59;
+            tmp_sec  <= 57;
         end
         else
         begin
             tmp_sec <= tmp_sec + 1;
             if(tmp_sec >= 60)
             begin
-                tmp_sec = 0;
+                tmp_sec <= 0;
                 tmp_min = tmp_min + 1;
             end
             if(tmp_min >= 60)
             begin
-                tmp_min = 0;
+                tmp_min <= 0;
                 tmp_hour = tmp_hour + 1;
             end
             if(tmp_hour >= 24)
-                tmp_hour = 0;
+                tmp_hour <= 0;
         end
     end
     
