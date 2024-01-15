@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Jan 15 11:42:11 2024
+# Process ID: 14240
+# Current directory: D:/Study/HDL/ASS/Logic design project/Training/Training.runs/synth_1
+# Command line: vivado.exe -log mux2to1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mux2to1.tcl
+# Log file: D:/Study/HDL/ASS/Logic design project/Training/Training.runs/synth_1/mux2to1.vds
+# Journal file: D:/Study/HDL/ASS/Logic design project/Training/Training.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source mux2to1.tcl -notrace
