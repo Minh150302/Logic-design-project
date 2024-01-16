@@ -62,10 +62,6 @@ module digital_clock_tb;
         
     end
     
-    
-//    initial 
-//    #5000 $finish;
-
     // Add your test scenarios here
 
 endmodule

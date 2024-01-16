@@ -94,6 +94,10 @@ module digital_clock(clk, rst, flag_chg, H_out1, H_out0, M_out1, M_out0, S_out1,
             counter = counter + 1;
     end
     
+    
+    
+    
+    
     // bo dem tinh chinh
     
     
