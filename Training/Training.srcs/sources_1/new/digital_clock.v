@@ -54,7 +54,7 @@ module digital_clock(clk, rst, H_out1, H_out0, M_out1, M_out0, S_out1,S_out0);
     
 //    always @(posedge clk or posedge rst)
 //    begin
-//        if(counter >= 5000)
+//        if(counter >= 5000) // low
 //        begin
 //            counter <= 0;
 //            clk_1s = ~clk_1s;

@@ -9,6 +9,9 @@ module ModeFSM(
     parameter MODE_1 = 2'b01;
     parameter MODE_2 = 2'b10;
     parameter MODE_3 = 2'b11;
+    
+    
+    
 
     // Define FSM register
     reg [1:0] current_state, next_state;
@@ -38,7 +41,12 @@ module ModeFSM(
     // Output mode based on current state
     always @* begin
         case (current_state)
-            IDLE: mode = 2'b00;
+            IDLE:
+            begin
+            module  
+            
+             mode = 2'b00;
+            end
             MODE_1: mode = 2'b01;
             MODE_2: mode = 2'b10;
             MODE_3: mode = 2'b11;

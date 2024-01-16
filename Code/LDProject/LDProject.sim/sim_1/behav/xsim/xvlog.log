@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/imports/new/digital_clock.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module digital_clock
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/imports/new/digital_clock_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module digital_clock_tb

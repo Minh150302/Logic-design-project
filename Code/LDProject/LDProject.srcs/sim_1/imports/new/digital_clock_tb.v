@@ -21,7 +21,7 @@
 
 module digital_clock_tb;
 
-    reg clk, rst;
+    reg clk, rst, flag_chg;
     wire [1:0] H_out1;
     wire [3:0] H_out0, M_out1, M_out0, S_out1, S_out0;
 
@@ -29,6 +29,7 @@ module digital_clock_tb;
     digital_clock uut (
         .clk(clk),
         .rst(rst),
+        .flag_chg(flag_chg),
         .H_out1(H_out1),
         .H_out0(H_out0),
         .M_out1(M_out1),
@@ -36,7 +37,13 @@ module digital_clock_tb;
         .S_out1(S_out1),
         .S_out0(S_out0)
     );
-
+    
+    
+    initial
+    begin
+    flag_chg = 0;
+    end
+        
     // Clock generation
     initial begin
         clk = 0;
@@ -47,9 +54,17 @@ module digital_clock_tb;
     initial begin
         rst = 1;
         #10 rst = 0; // Assert reset for 10 time units
+        #100
+        rst = 1;
+        #10
+        rst = 0;
+        
+        
     end
     
     
+//    initial 
+//    #5000 $finish;
 
     // Add your test scenarios here
 
