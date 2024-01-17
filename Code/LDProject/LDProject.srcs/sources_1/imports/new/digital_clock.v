@@ -62,10 +62,8 @@ module digital_clock(clk, rst, flag_chg, H_out1, H_out0, M_out1, M_out0, S_out1,
     endfunction
     
     
-    
-    
     //Get new hour and min if 
-    always @(*)
+    initial 
     begin
         if(flag_modify)
         begin
@@ -85,14 +83,31 @@ module digital_clock(clk, rst, flag_chg, H_out1, H_out0, M_out1, M_out0, S_out1,
             counter <= 1;
             clk_1s = ~clk_1s;
         end
-        else if(rst)
-        begin
-            counter <= 1;
-            clk_1s <= 1;
-        end
+//        else if(rst)
+//        begin
+//            counter <= 1;
+//            clk_1s <= 1;
+//        end
         else
             counter = counter + 1;
     end
+    
+    
+    
+    always @(posedge rst)
+    begin
+        counter <= 1;
+        clk_1s <= 1;
+
+        tmp_hour <= 23;
+        tmp_min  <= 40;
+        tmp_sec  <= 31;
+        
+    end
+    
+    
+    
+    
     
     
     
@@ -124,18 +139,18 @@ module digital_clock(clk, rst, flag_chg, H_out1, H_out0, M_out1, M_out0, S_out1,
     
     
     
-    
+    //validation for time
     always @(posedge clk_1s or posedge rst)
     begin
         // initial
-        if(rst)
-        begin
-            tmp_hour <= 23;
-            tmp_min  <= 40;
-            tmp_sec  <= 31;
-        end
-        else
-        begin
+//        if(rst)
+//        begin
+//            tmp_hour <= 23;
+//            tmp_min  <= 40;
+//            tmp_sec  <= 31;
+//        end
+//        else
+//        begin
             tmp_sec <= tmp_sec + 1;
             if(tmp_sec >= 60)
             begin
@@ -149,7 +164,7 @@ module digital_clock(clk, rst, flag_chg, H_out1, H_out0, M_out1, M_out0, S_out1,
             end
             if(tmp_hour >= 24)
                 tmp_hour <= 0;
-        end
+//        end
     end
     
      always @(*) 

@@ -1,13 +1,14 @@
 Vivado Simulator 2018.2
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto c7e70e8485394ec085fb2fa41cf081e1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot digital_clock_tb_behav xil_defaultlib.digital_clock_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto c7e70e8485394ec085fb2fa41cf081e1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot modify_time_tb_behav xil_defaultlib.modify_time_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.digital_clock
-Compiling module xil_defaultlib.digital_clock_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot digital_clock_tb_behav
+ERROR: [VRFC 10-529] concurrent assignment to a non-net hour1 is not permitted [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v:43]
+ERROR: [VRFC 10-1146] non-net variable cannot be connected to inout port hour1 [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v:43]
+ERROR: [VRFC 10-529] concurrent assignment to a non-net hour0 is not permitted [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v:44]
+ERROR: [VRFC 10-1146] non-net variable cannot be connected to inout port hour0 [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v:44]
+ERROR: [VRFC 10-529] concurrent assignment to a non-net min1 is not permitted [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v:45]
+ERROR: [VRFC 10-1146] non-net variable cannot be connected to inout port min1 [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v:45]
+ERROR: [VRFC 10-529] concurrent assignment to a non-net min0 is not permitted [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v:46]
+ERROR: [VRFC 10-1146] non-net variable cannot be connected to inout port min0 [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v:46]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
