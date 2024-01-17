@@ -27,10 +27,8 @@ module modify_time_tb;
    reg btn2;
    reg btn3;
    
-   reg [1:0] initial_hour1;
-   reg [3:0] initial_hour0;
-   reg [3:0] initial_min1;
-   reg [3:0] initial_min0;
+   
+
 
    // Outputs
    wire save;
@@ -47,9 +45,13 @@ module modify_time_tb;
       .btn3(btn3),
       .save(save),
       .hour1(hour1),
+//      .hour1(initial_hour1),
       .hour0(hour0),
+//      .hour0(initial_hour0),
       .min1(min1),
+//      .min1(initial_min1),
       .min0(min0)
+//      .min0(initial_min0)
    );
 
    // Clock generation
@@ -58,28 +60,29 @@ module modify_time_tb;
       forever #5 clk = ~clk;
    end
 
+
+   reg [1:0] initial_hour1;
+   reg [3:0] initial_hour0;
+   reg [3:0] initial_min1;
+   reg [3:0] initial_min0;
+   
+   
+   assign hour1 = (mode_enb)? initial_hour1 : 1'bz;
+   assign hour0 = (mode_enb)? initial_hour0 : 1'bz;
+   assign min1 = (mode_enb)? initial_min1: 1'bz;
+   assign min0 = (mode_enb)? initial_min0 : 1'bz;
+
    // Initial conditions
    initial begin
       // Set initial values
       mode_enb = 1; // Enable mode
-
-      // Set initial time to 4:50
-      reg [1:0] initial_hour1;
-         reg [3:0] initial_hour0;
-         reg [3:0] initial_min1;
-         reg [3:0] initial_min0;
-
       initial_hour1 = 4;
       initial_hour0 = 5;
       initial_min1 = 5;
       initial_min0 = 0;
+      // Set initial time to 4:50
 
-      // Apply initial values
-      #10;
-      hour1 = initial_hour1;
-      hour0 = initial_hour0;
-      min1 = initial_min1;
-      min0 = initial_min0;
+
 
       // Display headers
       $display("Time\t\tHour1\tHour0\tMin1\tMin0\tSave");
@@ -119,7 +122,7 @@ module modify_time_tb;
       #10 $stop;
    end
 
-   // Monitor display
+//    Monitor display
    always @* begin
       $monitor("%d:%d\t%d\t%d\t%d\t%d\t%d", hour1, hour0, min1, min0, save);
    end

@@ -37,6 +37,9 @@ module main_fsm(
     reg time_h; 
     
     
+    reg hour1, hour0;
+    
+    
     function  btn_regconize; //debounce
     input button;
     begin
@@ -73,6 +76,7 @@ module main_fsm(
     begin
         btn1_tmp <= 0;
         MODE = MODE + 1;
+        digital_clock dgital(asdfasdfasdf);
     end
     
     
