@@ -187,14 +187,48 @@ modify_time MODE2(.clk(clk), .mode_enb(CHAG_flag), .btn2(btn2) ,.btn3(btn3), .sa
             CHAG_flag = 0;
 			end
 			
+----------------------------------------------------------------------------------------------------------------------------
+			
             CHAG: 
 			begin
 			
-			CURR_flag = 0;
-            ALARM_flag = 0;
-            STOP_flag = 0;
-            CHAG_flag = 1;
+			// Expressions
+            tmp_hour = hour1 * 10 + hour0;
+            tmp_min = min1 * 10 + min0;
+            state = (mode_enb) ? ((state == 2'b00 && btn3) ? 2'b01 : (state == 2'b01 && btn3) ? 2'b00 : state) : state;
+            
+            // State transitions
+            case(state)
+              2'b00: // Minute mode
+                tmp_min = (mode_enb && btn2) ? (tmp_min + 1) : tmp_min;
+              2'b01: // Hour mode
+                tmp_hour = (mode_enb && btn2) ? (tmp_hour + 1) : tmp_hour;
+            endcase
+            
+            // Value decomposition
+            hour_1 = (tmp_hour >= 50) ? 5 : ((tmp_hour >= 40) ? 4 : ((tmp_hour >= 30) ? 3 : ((tmp_hour >= 20) ? 2 : ((tmp_hour >= 10) ? 1 : 0))));
+            hour_0 = tmp_hour - hour_1 * 10;
+            min_1 = (tmp_min >= 50) ? 5 : ((tmp_min >= 40) ? 4 : ((tmp_min >= 30) ? 3 : ((tmp_min >= 20) ? 2 : ((tmp_min >= 10) ? 1 : 0))));
+            min_0 = tmp_min - min_1 * 10;
+            
+            // Output assignments
+            hour1 = hour_1;
+            hour0 = hour_0;
+            min1 = min_1;
+            min0 = min_0;
+            
+            // Save condition
+            save = (mode_enb && btn2) ? 1 : 0;
+
 			end
+			
+-------------------------------------------------------------------------------------------------------------------------			
+			
+			
+			
+			
+			
+			
 			
             ALARM: 
             begin
