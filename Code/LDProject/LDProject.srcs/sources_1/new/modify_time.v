@@ -50,6 +50,10 @@ module modify_time(clk, mode_enb, btn2 ,btn3, save, hour1, hour0, min1, min0);
     end
     endfunction
     
+    
+    
+    
+    
     //take value
     initial
     begin
@@ -101,9 +105,11 @@ module modify_time(clk, mode_enb, btn2 ,btn3, save, hour1, hour0, min1, min0);
      min_0 <= tmp_min - min_1*10;
     end
     
-    assign hour1 = hour_1; // the most significant hour digit of the clock
-    assign hour0 = hour_0; // the least significant hour digit of the clock
-    assign min1 = min_1; // the most significant minute digit of the clock
-    assign min0 = min_0; // the least significant minute digit of the clock
+    
+    
+    assign hour1 = (!mode_enb)? hour_1: 1'bz; // the most significant hour digit of the clock
+    assign hour0 = (!mode_enb)? hour_0: 1'bz; // the least significant hour digit of the clock
+    assign min1 = (!mode_enb)? min_1: 1'bz; // the most significant minute digit of the clock
+    assign min0 = (!mode_enb)? min_0: 1'bz; // the least significant minute digit of the clock
 
 endmodule

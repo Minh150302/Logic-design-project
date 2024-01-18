@@ -9,4 +9,5 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.modify_time
 Compiling module xil_defaultlib.modify_time_tb
-ERROR: [XSIM 43-3185] "D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v" Line 127. Number of arguments are less than format specifiers. 
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot modify_time_tb_behav

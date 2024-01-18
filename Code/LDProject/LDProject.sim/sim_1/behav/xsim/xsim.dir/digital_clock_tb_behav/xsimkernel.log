@@ -2,3 +2,6 @@ Running: xsim.dir/digital_clock_tb_behav/xsimk.exe -simmode gui -wdb digital_clo
 Design successfully loaded
 Design Loading Memory Usage: 5932 KB (Peak: 5932 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 6568 KB (Peak: 6568 KB)
+Simulation CPU Usage: 31 ms

@@ -27,8 +27,6 @@ module modify_time_tb;
    reg btn2;
    reg btn3;
    
-   
-
 
    // Outputs
    wire save;
@@ -36,6 +34,16 @@ module modify_time_tb;
    wire [3:0] hour0;
    wire [3:0] min1;
    wire [3:0] min0;
+   
+   
+   
+   // test
+   wire [3:0]input_min0;
+   reg [3:0]output_min0;
+   reg output_value_valid;
+
+   
+   
 
    // Instantiate the module under test
    modify_time uut (
@@ -70,25 +78,37 @@ module modify_time_tb;
    assign hour1 = (mode_enb)? initial_hour1 : 1'bz;
    assign hour0 = (mode_enb)? initial_hour0 : 1'bz;
    assign min1 = (mode_enb)? initial_min1: 1'bz;
-   assign min0 = (mode_enb)? initial_min0 : 1'bz;
+//   assign min0 = (mode_enb)? initial_min0 : 1'bz;
+   
+   assign input_min0 = min0;
+   assign min0 = (output_value_valid==1'b1)? output_min0 : 1'hz;
 
    // Initial conditions
    initial begin
       // Set initial values
       mode_enb = 1; // Enable mode
-      initial_hour1 = 4;
+      initial_hour1 = 1;
       initial_hour0 = 5;
       initial_min1 = 5;
       initial_min0 = 0;
-      // Set initial time to 4:50
+      btn2 = 0;
+      btn3 = 0;
+      
+      output_value_valid = 0;
+      end
+      
+      initial begin
+      #10      // Set initial time to 4:50
+      output_value_valid = 1;
 
 
 
-      // Display headers
-      $display("Time\t\tHour1\tHour0\tMin1\tMin0\tSave");
+//      // Display headers
+//      $display("Time\t\tHour1\tHour0\tMin1\tMin0\tSave");
 
       // Apply modifications
       // Press btn2 4 times
+      output_min0 = 1'b1;
       btn2 = 1; #10; btn2 = 0; #10;  // 1
       btn2 = 1; #10; btn2 = 0; #10;  // 2
       btn2 = 1; #10; btn2 = 0; #10;  // 3
@@ -123,9 +143,9 @@ module modify_time_tb;
    end
 
 //    Monitor display
-   always @* begin
-      $monitor("%d:%d\t%d\t%d\t%d\t%d\t%d", hour1, hour0, min1, min0, save);
-   end
+//   always @* begin
+//      $monitor("%d:%d\t%d\t%d\t%d\t%d\t%d", hour1, hour0, min1, min0, save);
+//   end
 
 
 endmodule
