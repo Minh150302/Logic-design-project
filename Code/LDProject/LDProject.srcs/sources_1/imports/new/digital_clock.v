@@ -22,8 +22,7 @@
 
 module digital_clock(clk, rst, flag_chg, H_out1, H_out0, M_out1, M_out0, S_out1, S_out0);
     input wire clk, rst;  
-    input wire flag_chg; //flag when regconize the modify time
-//    input wire Change_time;
+    input wire flag_chg;
     
     inout wire [1:0] H_out1; // Display 2 to 0 
     inout wire [3:0] H_out0; // Display 9 to 0 
@@ -44,12 +43,10 @@ module digital_clock(clk, rst, flag_chg, H_out1, H_out0, M_out1, M_out0, S_out1,
     reg [3:0] hour_0, min_1, min_0, sec_1, sec_0;
     
     reg flag_modify;
-    reg flag_rst;
     
     initial
     begin
     flag_modify <= flag_chg;
-    flag_rst<=rst;
     end
     
     
@@ -75,73 +72,47 @@ module digital_clock(clk, rst, flag_chg, H_out1, H_out0, M_out1, M_out0, S_out1,
         flag_modify = 0;
     end
     end
+    
+    
+    
+    // for testbench : counter = 2;
+    // for real work:  counter = 500_000_000;
+   always @(posedge clk or posedge rst)
+   begin
+       if(counter >= 2)
+       begin
+           counter <= 1;
+           clk_1s = ~clk_1s;
+       end
+       else if(rst)
+       begin
+           counter <= 1;
+           clk_1s <=1;
+       end
+       else
+           counter = counter + 1;
+   end
 
-    always @(posedge clk or posedge rst)
+    
+    //initial value
+    initial 
     begin
-        if(counter >= 2)
-        begin
-            counter <= 1;
-            clk_1s = ~clk_1s;
-        end
-//        else if(rst)
-//        begin
-//            counter <= 1;
-//            clk_1s <= 1;
-//        end
-        else
-            counter = counter + 1;
+        tmp_hour <= 23;
+        tmp_min  <= 40;
+        tmp_sec  <= 31;
     end
-    
-    
-    
-    always @(posedge rst)
-    begin
-        counter <= 1;
-        clk_1s <= 1;
-
-        tmp_hour <= 1'bz;
-        tmp_min  <= 1'bz;
-        tmp_sec  <= 1'bz;
-    end
-    
-    // bo dem tinh chinh
-    
-    
-//     always @(posedge clk or posedge rst)
-//        begin
-//        if(rst) 
-//        begin
-//        counter <= 0;
-//        clk_1s <= 0;
-//        end
-//        else begin
-//        counter <= counter + 1;
-//        if(counter <= 2) 
-//        clk_1s <= 0;
-//        else if (counter >= 4) begin
-//        clk_1s <= 1;
-//        counter <= 1;
-//        end
-//        else
-//        clk_1s <= 1;
-//        end
-//        end
-    
-    
-    
     
     //validation for time
     always @(posedge clk_1s or posedge rst)
     begin
-        // initial
-//        if(rst)
-//        begin
-//            tmp_hour <= 23;
-//            tmp_min  <= 40;
-//            tmp_sec  <= 31;
-//        end
-//        else
-//        begin
+        if(rst)
+        begin
+            tmp_hour <= 23;
+            tmp_min  <= 40;
+            tmp_sec  <= 31;
+        end
+        else
+        begin
             tmp_sec <= tmp_sec + 1;
             if(tmp_sec >= 60)
             begin
@@ -155,7 +126,7 @@ module digital_clock(clk, rst, flag_chg, H_out1, H_out0, M_out1, M_out0, S_out1,
             end
             if(tmp_hour >= 24)
                 tmp_hour <= 0;
-//        end
+        end
     end
     
      always @(*) 

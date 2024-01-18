@@ -36,7 +36,15 @@ module main_fsm(
     input btn2,
     input btn3,
     
-    output [4:0] led
+    output [4:0] led,
+    output reg [1:0] hour1,
+    output     reg [3:0] hour0,
+       output  reg [3:0] min1,
+     output    reg [3:0] min0,
+      output   reg [3:0] sec1,
+     output    reg [3:0] sec0
+    
+    
     );
     
 	
@@ -46,12 +54,7 @@ module main_fsm(
     
     
     //th?i gian l?u tr? - th?i gian th?c - for store
-    reg [1:0] hour1; 
-    reg [3:0] hour0;
-    reg [3:0] min1;
-    reg [3:0] min0;
-    reg [3:0] sec1;
-    reg [3:0] sec0;
+    
     
     
 	
@@ -374,7 +377,15 @@ module main_fsm(
     end
     
     
-    
+//    assign hour1 = hour_1; // the most significant hour digit of the clock
+//    assign hour0 = hour_0; // the least significant hour digit of the clock
+//    assign min1 = min_1; // the most significant minute digit of the clock
+//    assign min0 = min_0; // the least significant minute digit of the clock
+//    assign sec1 = sec_1; // the most significant second digit of the clock
+//    assign sec0 = sec_0; // the least significant second digit of the clock 
+
+
+      
     
     
 	

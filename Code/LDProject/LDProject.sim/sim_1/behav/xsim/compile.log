@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/new/modify_time.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module modify_time
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module modify_time_tb

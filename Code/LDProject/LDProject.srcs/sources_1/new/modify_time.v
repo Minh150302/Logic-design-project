@@ -38,6 +38,8 @@ module modify_time(clk, mode_enb, btn2 ,btn3, save, hour1, hour0, min1, min0);
     reg [5:0] tmp_hour, tmp_min;
     reg state; // 0: Min change; 1: Hour change
     
+    reg save_tmp;
+    
     reg [1:0] hour_1;
     reg [3:0] hour_0, min_1, min_0;
     
@@ -57,6 +59,7 @@ module modify_time(clk, mode_enb, btn2 ,btn3, save, hour1, hour0, min1, min0);
         tmp_hour = hour1*10 + hour0;
         tmp_min = min1*10 + min0;
         state = 0;
+        save_tmp = 0;
     end
     
     
@@ -104,6 +107,11 @@ module modify_time(clk, mode_enb, btn2 ,btn3, save, hour1, hour0, min1, min0);
     end
     
     
+    always @(posedge mode_enb)
+    begin
+    if(btn2) save_tmp = 1;
+    end
+    
     always @(*) 
      begin
      hour_1 <= take_10(tmp_hour);
@@ -113,6 +121,8 @@ module modify_time(clk, mode_enb, btn2 ,btn3, save, hour1, hour0, min1, min0);
     end
     
     
+    // for testbench save = 0 since mode_enb is SET in 1st time
+    assign save = save_tmp;
     
     assign hour1 = hour_1; // the most significant hour digit of the clock
     assign hour0 = hour_0; // the least significant hour digit of the clock
