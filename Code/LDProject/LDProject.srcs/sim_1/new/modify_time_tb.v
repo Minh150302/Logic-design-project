@@ -37,10 +37,10 @@ module modify_time_tb;
    
    
    
-   // test
-   wire [3:0]input_min0;
-   reg [3:0]output_min0;
-   reg output_value_valid;
+//   // test
+//   wire [3:0]input_min0;
+//   reg [3:0]output_min0;
+//   reg output_value_valid;
 
    
    
@@ -69,37 +69,37 @@ module modify_time_tb;
    end
 
 
-   reg [1:0] initial_hour1;
-   reg [3:0] initial_hour0;
-   reg [3:0] initial_min1;
-   reg [3:0] initial_min0;
+//   reg [1:0] initial_hour1;
+//   reg [3:0] initial_hour0;
+//   reg [3:0] initial_min1;
+//   reg [3:0] initial_min0;
    
    
-   assign hour1 = (mode_enb)? initial_hour1 : 1'bz;
-   assign hour0 = (mode_enb)? initial_hour0 : 1'bz;
-   assign min1 = (mode_enb)? initial_min1: 1'bz;
-//   assign min0 = (mode_enb)? initial_min0 : 1'bz;
+//   assign hour1 = (mode_enb)? initial_hour1 : 1'bz;
+//   assign hour0 = (mode_enb)? initial_hour0 : 1'bz;
+//   assign min1 = (mode_enb)? initial_min1: 1'bz;
+////   assign min0 = (mode_enb)? initial_min0 : 1'bz;
    
-   assign input_min0 = min0;
-   assign min0 = (output_value_valid==1'b1)? output_min0 : 1'hz;
+//   assign input_min0 = min0;
+//   assign min0 = (output_value_valid==1'b1)? output_min0 : 1'hz;
 
    // Initial conditions
    initial begin
       // Set initial values
       mode_enb = 1; // Enable mode
-      initial_hour1 = 1;
-      initial_hour0 = 5;
-      initial_min1 = 5;
-      initial_min0 = 0;
+//      initial_hour1 = 1;
+//      initial_hour0 = 5;
+//      initial_min1 = 5;
+//      initial_min0 = 0;
       btn2 = 0;
       btn3 = 0;
       
-      output_value_valid = 0;
+//      output_value_valid = 0;
       end
       
       initial begin
       #10      // Set initial time to 4:50
-      output_value_valid = 1;
+//      output_value_valid = 1;
 
 
 
@@ -108,7 +108,7 @@ module modify_time_tb;
 
       // Apply modifications
       // Press btn2 4 times
-      output_min0 = 1'b1;
+//      output_min0 = 1'b1;
       btn2 = 1; #10; btn2 = 0; #10;  // 1
       btn2 = 1; #10; btn2 = 0; #10;  // 2
       btn2 = 1; #10; btn2 = 0; #10;  // 3
