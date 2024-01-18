@@ -20,6 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
+
+
+module minh(
+    input in,
+    output out
+);
+
+endmodule
+
 module main_fsm(
     input clk,
     input rst,
@@ -30,7 +39,8 @@ module main_fsm(
     output [4:0] led
     );
     
-    reg MODE ;
+	
+	//button
     reg rst_btn ;
     reg btn1_tmp, btn2_tmp, btn3_tmp;
     
@@ -40,6 +50,11 @@ module main_fsm(
     reg [3:0] Hour0;
     reg [3:0] Min1;
     reg [3:0] Min0;
+    reg [3:0] Sec1;
+    reg [3:0] Sec0;
+    
+    
+    reg [5:0]tmp_hour, tmp_min, tmp_sec;
     
     
     //th?i gian báo th?c
@@ -49,38 +64,63 @@ module main_fsm(
     reg [3:0] A_Min0; 
 	
 	
+	//flag
+	reg enb_ALARM; // dg cài báo th?c
+	reg flag_chg; // c? cho s? thay ?ôi cho ??ng h?
+	
+	reg CURR_flag;		//in normal mode (clock)
+    reg CHAG_flag;            //modify time
+    reg ALARM_flag;           //set alarm - turn on alarm 
+    reg STOP_flag;      //stopwatch mode
+	
+	
 	
 	reg [2:0]MODE;
 	
 	// Define FSM states
-    parameter INIT = 2'b000;			//initial
-    parameter CURR = 2'b001;			//in normal mode (clock)
-    parameter CHAG = 2'b111;			//modify time
-    parameter ALARM = 2'b010;			//set alarm - turn on alarm 
-	parameter STOP = 2'b100;			//stopwatch mode
+    parameter INIT = 3'b000;			//initial
+    parameter CURR = 3'b001;			//in normal mode (clock)
+    parameter CHAG = 3'b111;			//modify time
+    parameter ALARM = 3'b010;			//set alarm - turn on alarm 
+	parameter STOP = 3'b100;			//stopwatch mode
     
+    reg [1:0] current_state, next_state;
 	
 	
     
     
-    function  btn_regconize; //debounce
-    input button;
+//    function  btn_regconize; //debounce
+//    input button;
+//    begin
+    
+//    end
+//    endfunction
+    
+    
+//    always @(*)
+//    begin
+//    rst_btn <= btn_regconize(rst);
+//    btn1_tmp <= btn_regconize(btn1);
+////    btn2_tmp <= btn_regconize(btn2);
+////    btn3_tmp <= btn_regconize(btn3);
+//    end
+    
+	
+	
+	
+digital_clock MODE1(.clk(clk), .rst(!CURR_flag), .flag_chg(flag_chg), .H_out1(Hour1), .H_out0(Hour0), .M_out1(Min1), .M_out0(Min0), .S_out1(Sec1), .S_out0(Sec0));
+modify_time MODE2(.clk(clk), .mode_enb(CHAG_flag), .btn2(btn2) ,.btn3(btn3), .save(flag_chg), .hour1(Hour1), .hour0(Hour0), .min1(Min1), .min0(Min0));
+    
+    
+    always
+    
+    
+    
+    initial
     begin
-    
+    current_state = INIT;
+    #5 next_state = CURR;
     end
-    endfunction
-    
-    
-    always @(*)
-    begin
-    rst_btn <= btn_regconize(rst);
-    btn1_tmp <= btn_regconize(btn1);
-//    btn2_tmp <= btn_regconize(btn2);
-//    btn3_tmp <= btn_regconize(btn3);
-    end
-    
-	
-	reg [1:0] current_state, next_state;
 
     // Default assignments
     always @(posedge clk or posedge btn1) begin
@@ -89,9 +129,12 @@ module main_fsm(
             case (current_state)
                 INIT: next_state = CURR;
                 CURR: next_state = CHAG;
-                CHAG: next_state = ALARM;
-                ALARM: next_state = STOP;
-				STOP: next_state = CURR;
+                CHAG: next_state = CURR;
+
+//                CURR: next_state = ALARM;
+//                ALARM: next_state = STOP;
+//                STOP: next_state = CHAG;
+//				CHAG: next_state = CURR;
                 default: next_state = INIT;
             endcase
         end else begin
@@ -110,49 +153,79 @@ module main_fsm(
         case (current_state)
             INIT:
             begin
-            //initial value hour, min			
+            //initial value hour, min
+            tmp_hour <= 0;
+            tmp_min <= 0;
+            tmp_sec <= 0;
+
+            			
             Hour0 <= 0;
 			Hour1 <= 0;
 			Min0  <= 0;
 			Min1  <= 0;
+			Sec0  <= 0;
+            Sec1  <= 0;     
 			
+			A_Hour0 <= 0;
+			A_Hour1 <= 7;
+			A_Min0  <= 0;
+			A_Min1  <= 0;
+			enb_ALARM <=0;  
 			
-            
+			CURR_flag = 0;
+			ALARM_flag = 0;
+			STOP_flag = 0;
+			CHAG_flag = 0;
             end
-            CURR: mode = 2'b01;
-            CHAG: mode = 2'b10;
-            ALARM: mode = 2'b11;
-            default: mode = 2'b00;
+            
+            CURR:
+			begin
+//			digital_clock MODE1(.clk(clk), .rst(rst_btn), .flag_chg(flag_chg), .H_out1(Hour1), .H_out0(Hour0), .M_out1(Min1), .M_out0(Min0), .S_out1(Sec1), .S_out0(Sec0));			
+			CURR_flag = 1;
+            ALARM_flag = 0;
+            STOP_flag = 0;
+            CHAG_flag = 0;
+			end
+			
+            CHAG: 
+			begin
+			
+			CURR_flag = 0;
+            ALARM_flag = 0;
+            STOP_flag = 0;
+            CHAG_flag = 1;
+			end
+			
+            ALARM: 
+            begin
+            
+            CURR_flag = 0;
+            ALARM_flag = 1;
+            STOP_flag = 0;
+            CHAG_flag = 0;
+            end
+            
+            STOP: 
+            begin
+            
+            CURR_flag = 0;
+            ALARM_flag = 0;
+            STOP_flag = 1;
+            CHAG_flag = 0;
+            end
+            default: current_state = INIT;
         endcase
     end
+    
+    
+        assign hour1 = hour_1; // the most significant hour digit of the clock
+    assign hour0 = hour_0; // the least significant hour digit of the clock
+    assign min1 = min_1; // the most significant minute digit of the clock
+    assign min0 = min_0; // the least significant minute digit of the clock
+    
+    
+    
+    
 	
 
-	
-	
-	
-    // initial
-    // MODE = 0;
-    
-    // always @(posedge clk or posedge MODE)
-    // begin
-        // if(MODE >=5)
-        // MODE <= 1;
-    // end
-    
-    
-    // always @(posedge clk or posedge rst_btn or btn1_tmp)
-    // if(rst)
-    // begin
-        // MODE = 0;
-        // #10 MODE = 1;
-    // end
-    // else if (btn1_tmp)
-    // begin
-        // btn1_tmp <= 0;
-        // MODE = MODE + 1;
-        // digital_clock dgital(asdfasdfasdf);
-    // end
-    
-    
-    
 endmodule

@@ -1,13 +1,10 @@
 Vivado Simulator 2018.2
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto c7e70e8485394ec085fb2fa41cf081e1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot modify_time_tb_behav xil_defaultlib.modify_time_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto c7e70e8485394ec085fb2fa41cf081e1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot main_fsm_tb_behav xil_defaultlib.main_fsm_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.modify_time
-Compiling module xil_defaultlib.modify_time_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot modify_time_tb_behav
+ERROR: [VRFC 10-529] concurrent assignment to a non-net Hour1 is not permitted [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/new/main_fsm.v:108]
+ERROR: [VRFC 10-1146] non-net variable cannot be connected to inout port H_out1 [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/new/main_fsm.v:108]
+ERROR: [VRFC 10-529] concurrent assignment to a non-net flag_chg is not permitted [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/new/main_fsm.v:109]
+ERROR: [VRFC 10-1146] non-net variable cannot be connected to inout port hour1 [D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/new/main_fsm.v:109]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
