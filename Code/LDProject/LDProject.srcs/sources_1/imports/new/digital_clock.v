@@ -99,19 +99,10 @@ module digital_clock(clk, rst, flag_chg, H_out1, H_out0, M_out1, M_out0, S_out1,
         counter <= 1;
         clk_1s <= 1;
 
-        tmp_hour <= 23;
-        tmp_min  <= 40;
-        tmp_sec  <= 31;
-        
+        tmp_hour <= 1'bz;
+        tmp_min  <= 1'bz;
+        tmp_sec  <= 1'bz;
     end
-    
-    
-    
-    
-    
-    
-    
-    
     
     // bo dem tinh chinh
     
