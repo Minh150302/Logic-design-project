@@ -2,10 +2,10 @@
 2018.2
 Jun 14 2018
 20:41:02
-D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
-D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/imports/new/digital_clock_tb.v,1705419650,verilog,,,,digital_clock_tb,,,,,,,,
+D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.sim/sim_1/behav/xsim/glbl.v,1705593465,verilog,,,,glbl,,,,,,,,
+D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/imports/new/digital_clock_tb.v,1705593465,verilog,,,,digital_clock_tb,,,,,,,,
 D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/main_fsm_tb.v,1705591354,verilog,,,,main_fsm_tb,,,,,,,,
 D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v,1705580805,verilog,,,,modify_time_tb,,,,,,,,
-D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/imports/new/digital_clock.v,1705592906,verilog,,D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/imports/new/digital_clock_tb.v,,digital_clock,,,,,,,,
+D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/imports/new/digital_clock.v,1705593702,verilog,,D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/imports/new/digital_clock_tb.v,,digital_clock,,,,,,,,
 D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/new/main_fsm.v,1705591170,verilog,,D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/main_fsm_tb.v,,main_fsm;minh,,,,,,,,
-D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/new/modify_time.v,1705567912,verilog,,D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/main_fsm_tb.v,,modify_time,,,,,,,,
+D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sources_1/new/modify_time.v,1705594411,verilog,,D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/modify_time_tb.v,,modify_time,,,,,,,,
