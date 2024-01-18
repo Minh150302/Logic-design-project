@@ -54,6 +54,7 @@ module main_fsm(
     reg [3:0] sec0;
     
     
+	
     // value for calculate;
     reg [1:0] hour_1; 
     reg [3:0] hour_0;
@@ -64,19 +65,20 @@ module main_fsm(
 
     
     // value for calculate;
-    reg [5:0]tmp_hour, tmp_min, tmp_sec;
+    reg [5:0]tmp_hour, tmp_min, tmp_sec, a_tmp_hour, a_tmp_min;
     
     
-    //th?i gian báo th?c
-    reg [1:0] A_Hour1; 
-    reg [3:0] A_Hour0;
-    reg [3:0] A_Min1;
-    reg [3:0] A_Min0; 
+    //th?i gian bÃ¡o th?c
+	reg [1:0] a_hour1; 
+	reg [3:0] a_hour0;
+	reg [3:0] a_min1;
+	reg [3:0] a_min0; 
+	reg Alarm;  // output bÃ¡o thá»©c
 	
 	
 	//flag
-	reg enb_ALARM; // dg cài báo th?c
-	reg flag_chg; // c? cho s? thay ?ôi cho ??ng h?
+	reg enb_ALARM; // dg cÃ i bÃ¡o th?c
+	reg flag_chg; // c? cho s? thay ?Ã´i cho ??ng h?
 	
 	reg CURR_flag;		//in normal mode (clock)
     reg CHAG_flag;            //modify time
@@ -317,13 +319,34 @@ S_out0 = sec_0;
 			
             ALARM: 
             begin
+            	tmp_hour = hour1 * 10 + hour0;
+		tmp_min = min1 * 10 + min0;
+		state = (mode_enb) ? ((state == 2'b00 && btn3) ? 2'b01 : (state == 2'b01 && btn3) ? 2'b00 : state) : state;
             
+		case (state)
+			2'b00: a_tmp_min = (mode_enb && btn2) ? (a_tmp_min + 1) : a_tmp_min;
+			2'b01: a_tmp_hour = (mode_enb && btn2) ? (a_tmp_hour + 1) : a_tmp_hour;
+		endcase
+
+		a_hour1 = (a_tmp_hour >= 50) ? 5 : ((a_tmp_hour >= 40) ? 4 : ((a_tmp_hour >= 30) ? 3 : ((a_tmp_hour >= 20) ? 2 : ((a_tmp_hour >= 10) ? 1 : 0))));
+		a_hour0 = a_tmp_hour - a_hour1 * 10;
+		a_min1 = (a_tmp_min >= 50) ? 5 : ((a_tmp_min >= 40) ? 4 : ((a_tmp_min >= 30) ? 3 : ((a_tmp_min >= 20) ? 2 : ((a_tmp_min >= 10) ? 1 : 0))));
+		a_min0 = a_tmp_min - a_min1 * 10;
+
+		Alarm = rst ? 0 : ((a_hour1 == Hour1) && (a_hour0 == Hour0) && (a_min1 == Min1) && (a_min0 == Min0)) ? 1 : 0;
+
+		    
             CURR_flag = 0;
             ALARM_flag = 1;
             STOP_flag = 0;
             CHAG_flag = 0;
             end
-            
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------		
             STOP: 
             begin
             
