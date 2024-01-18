@@ -22,26 +22,35 @@
 
 module main_fsm_tb;
         // Inputs
+  // Inputs
         reg clk;
         reg rst;
-        reg btn1;
-        reg btn2;
-        reg btn3;
-    
+        reg btn1, btn2, btn3;
+      
         // Outputs
         wire [4:0] led;
-    
-        // Instantiate the module to be tested
+        wire [1:0] hour1;
+        wire [3:0] hour0;
+        wire [3:0] min1;
+        wire [3:0] min0;
+        wire [3:0] sec1;
+        wire [3:0] sec0;
+      
+        // Instantiate the main_fsm module
         main_fsm uut (
-            .clk(clk),
-            .rst(rst),
-            .btn1(btn1),
-            .btn2(btn2),
-            .btn3(btn3),
-            .led(led)
+          .clk(clk),
+          .rst(rst),
+          .btn1(btn1),
+          .btn2(btn2),
+          .btn3(btn3),
+          .led(led),
+          .hour1(hour1),
+          .hour0(hour0),
+          .min1(min1),
+          .min0(min0),
+          .sec1(sec1),
+          .sec0(sec0)
         );
-        
-        
         
         initial begin
 //          $display("Time: %0d:%0d:%0d", uut.hour1, uut.hour0, uut.min1, uut.min0, uut.sec1, uut.sec0);
@@ -98,8 +107,8 @@ module main_fsm_tb;
         // Clock generation
         always #5 clk = ~clk; 
         
+        
+        
 
-
-          
     endmodule
 
