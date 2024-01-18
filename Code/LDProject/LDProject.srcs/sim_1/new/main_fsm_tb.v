@@ -32,7 +32,7 @@ module main_fsm_tb;
         wire [4:0] led;
     
         // Instantiate the module to be tested
-        main_fsm dut (
+        main_fsm uut (
             .clk(clk),
             .rst(rst),
             .btn1(btn1),
@@ -40,6 +40,13 @@ module main_fsm_tb;
             .btn3(btn3),
             .led(led)
         );
+        
+        
+        
+        initial begin
+//          $display("Time: %0d:%0d:%0d", uut.hour1, uut.hour0, uut.min1, uut.min0, uut.sec1, uut.sec0);
+          $monitor("Time: %0d:%0d:%0d", uut.hour1, uut.hour0, uut.min1, uut.min0, uut.sec1, uut.sec0);
+        end
     
         // Initial block for testbench initialization
         initial begin
@@ -89,6 +96,10 @@ module main_fsm_tb;
         end
     
         // Clock generation
-        always #5 clk = ~clk;   
+        always #5 clk = ~clk; 
+        
+
+
+          
     endmodule
 

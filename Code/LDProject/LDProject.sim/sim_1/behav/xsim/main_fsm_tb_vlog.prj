@@ -1,8 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../LDProject.srcs/sources_1/imports/new/digital_clock.v" \
 "../../../../LDProject.srcs/sources_1/new/main_fsm.v" \
-"../../../../LDProject.srcs/sources_1/new/modify_time.v" \
 "../../../../LDProject.srcs/sim_1/new/main_fsm_tb.v" \
 
 # compile glbl module

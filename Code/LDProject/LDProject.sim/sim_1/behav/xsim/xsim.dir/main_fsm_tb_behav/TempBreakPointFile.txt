@@ -1,0 +1,2 @@
+Breakpoint File Version 1.0
+88 true D:/Study/HDL/ASS/Logic design project/Code/LDProject/LDProject.srcs/sim_1/new/main_fsm_tb.v
