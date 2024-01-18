@@ -45,15 +45,25 @@ module main_fsm(
     reg btn1_tmp, btn2_tmp, btn3_tmp;
     
     
-    //th?i gian l?u tr? - th?i gian th?c
-    reg [1:0] Hour1; 
-    reg [3:0] Hour0;
-    reg [3:0] Min1;
-    reg [3:0] Min0;
-    reg [3:0] Sec1;
-    reg [3:0] Sec0;
+    //th?i gian l?u tr? - th?i gian th?c - for store
+    reg [1:0] hour1; 
+    reg [3:0] hour0;
+    reg [3:0] min1;
+    reg [3:0] min0;
+    reg [3:0] sec1;
+    reg [3:0] sec0;
     
     
+    // value for calculate;
+    reg [1:0] hour_1; 
+    reg [3:0] hour_0;
+    reg [3:0] min_1;
+    reg [3:0] min_0;
+    reg [3:0] sec_1;
+    reg [3:0] sec_0; 
+
+    
+    // value for calculate;
     reg [5:0]tmp_hour, tmp_min, tmp_sec;
     
     
@@ -73,7 +83,7 @@ module main_fsm(
     reg ALARM_flag;           //set alarm - turn on alarm 
     reg STOP_flag;      //stopwatch mode
 	
-	
+	reg state = 0;
 	
 	reg [2:0]MODE;
 	
@@ -85,6 +95,13 @@ module main_fsm(
 	parameter STOP = 3'b100;			//stopwatch mode
     
     reg [1:0] current_state, next_state;
+	
+	
+	
+	
+	//tmp variable
+	reg clk_1s;
+	reg [28:0] counter;
 	
 	
     
@@ -105,17 +122,26 @@ module main_fsm(
 ////    btn3_tmp <= btn_regconize(btn3);
 //    end
     
-	
-	
-	
-digital_clock MODE1(.clk(clk), .rst(!CURR_flag), .flag_chg(flag_chg), .H_out1(Hour1), .H_out0(Hour0), .M_out1(Min1), .M_out0(Min0), .S_out1(Sec1), .S_out0(Sec0));
-modify_time MODE2(.clk(clk), .mode_enb(CHAG_flag), .btn2(btn2) ,.btn3(btn3), .save(flag_chg), .hour1(Hour1), .hour0(Hour0), .min1(Min1), .min0(Min0));
-    
-    
-    always
+    function [3:0] take_10;
+    input [5:0] number;
+    begin
+    take_10 = (number >=50) ? 5 : ((number >= 40)? 4 :((number >= 30)? 3 :((number >= 20)? 2 :((number >= 10)? 1 :0))));
+    end
+    endfunction
     
     
     
+    //validation
+    always @(*)
+    begin
+        if(tmp_sec >= 60)
+            tmp_sec <= 0;
+        if(tmp_min >= 60)
+            tmp_min <= 0;
+        if(tmp_hour >= 24)
+            tmp_hour <= 0;
+    end
+
     initial
     begin
     current_state = INIT;
@@ -159,12 +185,12 @@ modify_time MODE2(.clk(clk), .mode_enb(CHAG_flag), .btn2(btn2) ,.btn3(btn3), .sa
             tmp_sec <= 0;
 
             			
-            Hour0 <= 0;
-			Hour1 <= 0;
-			Min0  <= 0;
-			Min1  <= 0;
-			Sec0  <= 0;
-            Sec1  <= 0;     
+//            Hour0 <= 0;
+//			Hour1 <= 0;
+//			Min0  <= 0;
+//			Min1  <= 0;
+//			Sec0  <= 0;
+//            Sec1  <= 0;     
 			
 			A_Hour0 <= 0;
 			A_Hour1 <= 7;
@@ -180,14 +206,73 @@ modify_time MODE2(.clk(clk), .mode_enb(CHAG_flag), .btn2(btn2) ,.btn3(btn3), .sa
             
             CURR:
 			begin
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            
+
+            // Flag modification on initial condition
+
+            // Time modification on flag change
+            if (flag_chg) begin
+                tmp_hour = hour1 * 10 + hour0;
+                tmp_min = min1 * 10 + min0;
+                tmp_sec = 0;
+                counter = 0;
+                flag_chg = 0;
+            end
+
+            // Clock and counter behavior
+            counter = (counter >= 2) ? 1 : counter + 1;
+            clk_1s = (counter == 1) ? ~clk_1s : clk_1s;
+
+            // Validation for time
+            tmp_sec = (counter == 1) ? (tmp_sec + 1) : tmp_sec;
+            tmp_min = (tmp_sec >= 60) ? (tmp_min + 1) : tmp_min;
+            tmp_hour = (tmp_min >= 60) ? (tmp_hour + 1) : tmp_hour;
+
+
+// Value decomposition
+hour_1 = take10(tmp_hour);
+hour_0 = tmp_hour - hour_1 * 10;
+min_1 = take10(tmp_min);
+min_0 = tmp_min - min_1 * 10;
+sec_1 = take10(tmp_hour);
+sec_0 = tmp_sec - sec_1 * 10;
+
+// Output assignments
+H_out1 = hour_1;
+H_out0 = hour_0;
+M_out1 = min_1;
+M_out0 = min_0;
+S_out1 = sec_1;
+S_out0 = sec_0;
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 //			digital_clock MODE1(.clk(clk), .rst(rst_btn), .flag_chg(flag_chg), .H_out1(Hour1), .H_out0(Hour0), .M_out1(Min1), .M_out0(Min0), .S_out1(Sec1), .S_out0(Sec0));			
-			CURR_flag = 1;
-            ALARM_flag = 0;
-            STOP_flag = 0;
-            CHAG_flag = 0;
+//			CURR_flag = 1;
+//            ALARM_flag = 0;
+//            STOP_flag = 0;
+//            CHAG_flag = 0;
 			end
 			
-----------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 			
             CHAG: 
 			begin
@@ -195,20 +280,20 @@ modify_time MODE2(.clk(clk), .mode_enb(CHAG_flag), .btn2(btn2) ,.btn3(btn3), .sa
 			// Expressions
             tmp_hour = hour1 * 10 + hour0;
             tmp_min = min1 * 10 + min0;
-            state = (mode_enb) ? ((state == 2'b00 && btn3) ? 2'b01 : (state == 2'b01 && btn3) ? 2'b00 : state) : state;
+            state = (CHAG_flag) ? ((state == 2'b00 && btn3) ? 2'b01 : (state == 2'b01 && btn3) ? 2'b00 : state) : state;
             
             // State transitions
             case(state)
               2'b00: // Minute mode
-                tmp_min = (mode_enb && btn2) ? (tmp_min + 1) : tmp_min;
+                tmp_min = (CHAG_flag && btn2) ? (tmp_min + 1) : tmp_min;
               2'b01: // Hour mode
-                tmp_hour = (mode_enb && btn2) ? (tmp_hour + 1) : tmp_hour;
+                tmp_hour = (CHAG_flag && btn2) ? (tmp_hour + 1) : tmp_hour;
             endcase
             
             // Value decomposition
-            hour_1 = (tmp_hour >= 50) ? 5 : ((tmp_hour >= 40) ? 4 : ((tmp_hour >= 30) ? 3 : ((tmp_hour >= 20) ? 2 : ((tmp_hour >= 10) ? 1 : 0))));
+            hour_1 = take10(tmp_hour);
             hour_0 = tmp_hour - hour_1 * 10;
-            min_1 = (tmp_min >= 50) ? 5 : ((tmp_min >= 40) ? 4 : ((tmp_min >= 30) ? 3 : ((tmp_min >= 20) ? 2 : ((tmp_min >= 10) ? 1 : 0))));
+            min_1 = take10(tmp_min);
             min_0 = tmp_min - min_1 * 10;
             
             // Output assignments
@@ -218,11 +303,11 @@ modify_time MODE2(.clk(clk), .mode_enb(CHAG_flag), .btn2(btn2) ,.btn3(btn3), .sa
             min0 = min_0;
             
             // Save condition
-            save = (mode_enb && btn2) ? 1 : 0;
+            flag_chg = (CHAG_flag && btn2) ? 1 : 0;
 
 			end
 			
--------------------------------------------------------------------------------------------------------------------------			
+//-------------------------------------------------------------------------------------------------------------------------			
 			
 			
 			
@@ -247,15 +332,27 @@ modify_time MODE2(.clk(clk), .mode_enb(CHAG_flag), .btn2(btn2) ,.btn3(btn3), .sa
             STOP_flag = 1;
             CHAG_flag = 0;
             end
+            
+            STOP:
+            begin
+            
+            
+            end
+
             default: current_state = INIT;
         endcase
     end
     
+    always@(*) begin
+        hour1 = hour_1;
+        hour0 = hour_0;
+        min1 = min_1;
+        min0 = min_0;
+        sec1 = sec_1;
+        sec0 = sec_0;
+        
+    end
     
-        assign hour1 = hour_1; // the most significant hour digit of the clock
-    assign hour0 = hour_0; // the least significant hour digit of the clock
-    assign min1 = min_1; // the most significant minute digit of the clock
-    assign min0 = min_0; // the least significant minute digit of the clock
     
     
     
